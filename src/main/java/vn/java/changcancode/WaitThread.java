@@ -12,6 +12,7 @@ import javax.microedition.io.StreamConnectionNotifier;
 
 public class WaitThread implements Runnable{
 
+	public static UUID uuid = new UUID(80087355);
 	public WaitThread() {
 	}
 	
@@ -27,7 +28,7 @@ public class WaitThread implements Runnable{
 		try {
 			local = LocalDevice.getLocalDevice();
 			local.setDiscoverable(DiscoveryAgent.GIAC);
-			UUID uuid = new UUID(80087355);
+			System.out.println("uuid: " + uuid.toString());
 			String url = "btspp://localhost:" + uuid.toString() + ";name=RemoteBluetooth";
 			notifier = (StreamConnectionNotifier) Connector.open(url);
 		} catch (BluetoothStateException e) {

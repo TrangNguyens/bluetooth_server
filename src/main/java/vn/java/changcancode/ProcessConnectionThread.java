@@ -16,6 +16,7 @@ public class ProcessConnectionThread implements Runnable {
 	private StreamConnection connection;
 	
 	public ProcessConnectionThread(StreamConnection connection) {
+		System.out.println("create ProcessConnectinThread");
 		this.connection = connection;
 	}
 	@Override
